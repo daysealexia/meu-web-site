@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dayse Alexia — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Frontend Developer em formação, com base em engenharia, visão de produto e obsessão por evolução constante."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+
+    <!-- Prévia de link (WhatsApp, LinkedIn, Facebook, Slack...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dayse Alexia" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:title" content="Dayse Alexia — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend Developer em formação, com base em engenharia, visão de produto e obsessão por evolução constante."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/foto.jpg" />
+    <meta property="og:image:alt" content="Foto de Dayse Alexia" />
+
+    <!-- Prévia no X/Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dayse Alexia — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer em formação, com base em engenharia, visão de produto e obsessão por evolução constante."
+    />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/foto.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Aplica o tema salvo antes da página aparecer (evita "piscar") -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          root.dataset.theme = localStorage.getItem("theme") || "dark";
+        } catch (e) {
+          root.dataset.theme = "dark";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
