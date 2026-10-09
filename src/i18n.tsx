@@ -3,10 +3,23 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 export type Lang = "pt" | "en";
 
 const pt = {
-  nav: { home: "Início", blog: "Blog" },
+  nav: { home: "Início", about: "Sobre", experience: "Experiência", projects: "Projetos", contact: "Contato", blog: "Blog" },
+  sections: {
+    about: "Sobre",
+    experience: "Experiência",
+    projects: "Projetos",
+    skills: "Habilidades",
+    community: "Comunidade",
+    contact: "Contato",
+  },
+  education: "Formação",
+  languages: "Idiomas",
+  code: "Código",
+  demo: "Demo",
+  contactTitle: "Vamos conversar?",
+  contactText: "Estou aberta a oportunidades remotas, colaborações e boas conversas sobre produto e tecnologia.",
   downloadCv: "Baixar currículo",
   cvNote: "",
-  elsewhere: "Outros projetos",
   latestPosts: "Textos recentes",
   allPosts: "Ver todos os textos",
   blogTitle: "Blog",
@@ -25,10 +38,23 @@ const pt = {
 type Dict = typeof pt;
 
 const en: Dict = {
-  nav: { home: "Home", blog: "Blog" },
+  nav: { home: "Home", about: "About", experience: "Experience", projects: "Projects", contact: "Contact", blog: "Blog" },
+  sections: {
+    about: "About",
+    experience: "Experience",
+    projects: "Projects",
+    skills: "Skills",
+    community: "Community",
+    contact: "Contact",
+  },
+  education: "Education",
+  languages: "Languages",
+  code: "Code",
+  demo: "Demo",
+  contactTitle: "Let's talk?",
+  contactText: "I'm open to remote opportunities, collaborations and good conversations about product and technology.",
   downloadCv: "Download résumé",
   cvNote: "(in Portuguese)",
-  elsewhere: "Other projects",
   latestPosts: "Recent writing",
   allPosts: "See all posts",
   blogTitle: "Blog",

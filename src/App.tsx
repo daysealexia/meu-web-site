@@ -8,13 +8,15 @@ import { Post } from "./pages/Post";
 import { profile } from "./data/profile";
 
 export function App() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const { lang, t } = useI18n();
 
-  // Volta ao topo ao trocar de página
+  // Rola até a seção do link (#sobre, #contato...) ou volta ao topo ao trocar de página
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    const target = hash ? document.getElementById(hash.slice(1)) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   // Título da aba na página inicial
   useEffect(() => {
