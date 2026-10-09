@@ -13,8 +13,8 @@ npm run dev
 
 | O quê | Arquivo |
 | --- | --- |
-| Nome, título, bio, e-mail, LinkedIn, GitHub | `src/data/profile.ts` |
-| Outros sites / portfólio | `sites` em `src/data/profile.ts` |
+| Todo o conteúdo: topo, sobre, experiência, projetos, habilidades, comunidade | `src/data/profile.ts` |
+| Ordem das seções | `src/pages/Home.tsx` |
 | Textos da interface (PT/EN) | `src/i18n.tsx` |
 | Cores e fontes | `src/styles/global.css` |
 | Foto e currículo | `public/foto.jpg`, `public/Dayse_Alexia_CV_PT.pdf` |

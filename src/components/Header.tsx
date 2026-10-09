@@ -10,6 +10,13 @@ export function Header() {
   const { lang, setLang, t } = useI18n();
   const { theme, toggle } = useTheme();
 
+  const sections = [
+    { id: "sobre", label: t.nav.about },
+    { id: "experiencia", label: t.nav.experience },
+    { id: "projetos", label: t.nav.projects },
+    { id: "contato", label: t.nav.contact },
+  ];
+
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logo} aria-label={t.nav.home}>
@@ -17,13 +24,20 @@ export function Header() {
       </Link>
 
       <nav className={styles.nav}>
+        {sections.map((s) => (
+          <Link key={s.id} to={`/#${s.id}`} className={styles.link}>
+            {s.label}
+          </Link>
+        ))}
         <NavLink
           to="/blog"
           className={({ isActive }) => (isActive ? `${styles.link} ${styles.active}` : styles.link)}
         >
           {t.nav.blog}
         </NavLink>
+      </nav>
 
+      <div className={styles.controls}>
         <div className={styles.langs} role="group" aria-label={t.langLabel}>
           {langs.map((l) => (
             <button
@@ -47,7 +61,7 @@ export function Header() {
         >
           {theme === "dark" ? <SunIcon /> : <MoonIcon />}
         </button>
-      </nav>
+      </div>
     </header>
   );
 }

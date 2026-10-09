@@ -1,12 +1,23 @@
 .header {
-  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo nav controls";
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  padding-block: 1.5rem;
+  padding-block: 1rem;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Estende o fundo até as bordas da tela, além do container */
+  box-shadow: 0 0 0 100vmax var(--header-bg);
+  clip-path: inset(0 -100vmax);
 }
 
 .logo {
+  grid-area: logo;
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.75rem;
@@ -20,15 +31,17 @@
 }
 
 .nav {
+  grid-area: nav;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
 }
 
 .link {
   font-size: 0.875rem;
   color: var(--muted);
   text-decoration: none;
+  white-space: nowrap;
   padding: 0.5rem 0.25rem;
   transition: color 0.2s;
 }
@@ -36,6 +49,13 @@
 .link:hover,
 .active {
   color: var(--text);
+}
+
+.controls {
+  grid-area: controls;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .langs {
@@ -85,4 +105,30 @@
 .iconButton:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* No celular, os links das seções descem para uma linha própria, com rolagem lateral */
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo controls"
+      "nav nav";
+    row-gap: 0.5rem;
+    padding-block: 0.75rem 0.25rem;
+  }
+
+  .controls {
+    justify-self: end;
+  }
+
+  .nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
 }
